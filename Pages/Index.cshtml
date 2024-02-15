@@ -1,0 +1,26 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "OpenAI Function Calling";
+}
+<div class="text-center">
+    <h1 class="display-4">@ViewData["Title"]</h1>
+    <form method="post">
+        <input type="text" name="prompt" size="80" required/>
+        <input type="submit" value="Submit" />
+    </form>
+
+    <pre style="text-align: left">
+        
+        Example prompts:
+        
+        What is the id number of product: Louisiana Hot Spiced Okra?
+        What is the unit price of product: Sir Rodney's Marmalade?
+        How many units in stock for product: Tofu?
+        What is the most expensive product?
+    </pre>
+
+    @if (Model.Reply != null) {
+        <p class="alert alert-success">@Model.Reply</p>
+    }
+</div>
